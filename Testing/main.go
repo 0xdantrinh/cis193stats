@@ -3,12 +3,12 @@ package main
 import (
 	"fmt"
 
-	"github.com/dantrinh/cis193-finalproject"
+	"github.com/dantrinh/cis193stats"
 )
 
 func main() {
 
-	a, _ := stats.Mean([]float64{1, 2, 3, 4, 5})
+	a, _ := cis193stats.Mean([]float64{1, 2, 3, 4, 5})
 	fmt.Println(a) // 3
 
 }
