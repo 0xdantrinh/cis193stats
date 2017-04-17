@@ -1,11 +1,14 @@
 package stats
 
-import "math"
+import (
+	"errors"
+	"math"
+)
 
 func SumAll(inp data) (out float64, err error) {
 
 	if inp.Len() == 0 {
-		return math.NaN(), err.New("Empty Set")
+		return math.NaN(), errors.New("Empty Set")
 	} else {
 		for _, v := range inp {
 			out += v
@@ -18,7 +21,7 @@ func SumAll(inp data) (out float64, err error) {
 func Mean(inp data) (float64, error) {
 
 	if inp.Len() == 0 {
-		return math.NaN(), err.New("Empty Set")
+		return math.NaN(), errors.New("Empty Set")
 	}
 
 	sum, _ := inp.SumAll()
@@ -31,7 +34,7 @@ func GeometricMean(inp data) (float64, error) {
 
 	length := inp.Len()
 	if length == 0 {
-		return math.NaN(), err.New("Empty Set")
+		return math.NaN(), errors.New("Empty Set")
 	}
 
 	// Get the product of all the numbers

@@ -1,6 +1,9 @@
 package stats
 
-import "math"
+import (
+	"errors"
+	"math"
+)
 
 // Min finds the lowest number in a set of data
 func Min(inp data) (min float64, err error) {
@@ -10,7 +13,7 @@ func Min(inp data) (min float64, err error) {
 
 	// Return an error if there are no numbers
 	if l == 0 {
-		return math.NaN(), err.New("Empty Set")
+		return math.NaN(), errors.New("Empty Set")
 	}
 
 	// Get the first value as the starting point
@@ -30,7 +33,7 @@ func Max(inp data) (max float64, err error) {
 
 	// Return an error if there are no numbers
 	if inp.Len() == 0 {
-		return math.NaN(), err.New("Empty Set")
+		return math.NaN(), errors.New("Empty Set")
 	}
 
 	// Get the first value as the starting point
