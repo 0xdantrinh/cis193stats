@@ -8,7 +8,7 @@ import (
 
 func main() {
 
-	a, _ = stats.Mean([]float64{1, 2, 3, 4, 5})
+	a, _ := stats.Mean([]float64{1, 2, 3, 4, 5})
 	fmt.Println(a) // 3
 
 }
