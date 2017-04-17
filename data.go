@@ -18,14 +18,15 @@ func (dta data) SumAll() (float64, error) { return SumAll(dta) }
 // Mean returns the mean of the data
 func (dta data) Mean() (float64, error) { return Mean(dta) }
 
-// Median returns the median of the data
+// GeometricMean returns the median of the data
+func (dta data) GeometricMean() (float64, error) { return GeometricMean(dta) }
+
+/*// Median returns the median of the data
 func (dta data) Median() (float64, error) { return Median(dta) }
 
 // Mode returns the mode of the data
 func (dta data) Mode() ([]float64, error) { return Mode(dta) }
 
-// GeometricMean returns the median of the data
-func (dta data) GeometricMean() (float64, error) { return GeometricMean(dta) }
 
 // MedianAbsoluteDeviation the median of the absolute deviations from the dataset median
 func (dta data) MedianAbsoluteDeviation() (float64, error) {
@@ -100,7 +101,7 @@ func (dta data) Covariance(d data) (float64, error) {
 // CovariancePopulation computes covariance for entire population between two variables.
 func (dta data) CovariancePopulation(d data) (float64, error) {
 	return CovariancePopulation(dta, d)
-}
+}*/
 
 // Len returns length of slice
 func (dta data) Len() int { return len(dta) }
