@@ -1,4 +1,4 @@
-package stats
+package cis193stats
 
 // data is a named type for []float64 with helper methods
 type data []float64
