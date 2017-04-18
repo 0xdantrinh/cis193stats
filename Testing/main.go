@@ -26,22 +26,19 @@ func main() {
 	m, _ := cis193stats.Mode([]float64{5, 5, 3, 3, 4, 2, 1})
 	fmt.Println(m) // [5 3]
 
-	/*a, _ = stats.PopulationVariance([]float64{1, 2, 3, 4, 5})
+	a, _ = cis193stats.PopulationVariance([]float64{1, 2, 3, 4, 5})
 	fmt.Println(a) // 2
 
-	a, _ = stats.SampleVariance([]float64{1, 2, 3, 4, 5})
+	a, _ = cis193stats.SampleVariance([]float64{1, 2, 3, 4, 5})
 	fmt.Println(a) // 2.5
 
-	a, _ = stats.MedianAbsoluteDeviationPopulation([]float64{1, 2, 3})
-	fmt.Println(a) // 1
-
-	a, _ = stats.StandardDeviationPopulation([]float64{1, 2, 3})
+	a, _ = cis193stats.StandardDeviationPopulation([]float64{1, 2, 3})
 	fmt.Println(a) // 0.816496580927726
 
-	a, _ = stats.StandardDeviationSample([]float64{1, 2, 3})
+	a, _ = cis193stats.StandardDeviationSample([]float64{1, 2, 3})
 	fmt.Println(a) // 1
-
-	a, _ = stats.Percentile([]float64{1, 2, 3, 4, 5}, 75)
-	fmt.Println(a) // 4*/
+	/*
+		a, _ = stats.Percentile([]float64{1, 2, 3, 4, 5}, 75)
+		fmt.Println(a) // 4*/
 
 }
