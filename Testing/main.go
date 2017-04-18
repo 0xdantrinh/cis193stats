@@ -39,6 +39,9 @@ func main() {
 	fmt.Println(a) // 1
 
 	a, _ = cis193stats.Correlation([]float64{1, 2, 3, 4, 5}, []float64{1, 2, 3, 4, 5})
-	fmt.Println(a) // 4
+	fmt.Println(a) // ~1
+
+	a, _ = cis193stats.Covariance([]float64{1, 2, 3, 4, 5}, []float64{1, 2, 3, 4, 5})
+	fmt.Println(a) // ~1
 
 }

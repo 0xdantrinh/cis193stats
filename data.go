@@ -42,7 +42,6 @@ func (dta data) StandardDeviationSample() (float64, error) {
 	return StandardDeviationSample(dta)
 }
 
-/*
 // Percentile finds the relative standing in a slice of floats
 func (dta data) Percentile(p float64) (float64, error) {
 	return Percentile(dta, p)
@@ -53,6 +52,7 @@ func (dta data) Correlation(d data) (float64, error) {
 	return Correlation(dta, d)
 }
 
+/*
 // Quartile returns the three quartile points from a slice of data
 func (dta data) Quartile(d data) (Quartiles, error) {
 	return Quartile(d)
