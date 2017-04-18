@@ -14,10 +14,10 @@ func main() {
 	a, _ = cis193stats.Median([]float64{1, 2, 3, 4, 5, 6, 7})
 	fmt.Println(a) // 4
 
-	a, _ := cis193stats.Min(d)
+	a, _ = cis193stats.Min([]float64{1, 2, 3, 4, 5, 6, 7})
 	fmt.Println(a) // 1.1
 
-	a, _ = cis193stats.Max(d)
+	a, _ = cis193stats.Max([]float64{1, 2, 3, 4, 5, 6, 7})
 	fmt.Println(a) // 5
 
 	a, _ = cis193stats.SumAll([]float64{1.1, 2.2, 3.3})
