@@ -37,8 +37,8 @@ func main() {
 
 	a, _ = cis193stats.StandardDeviationSample([]float64{1, 2, 3})
 	fmt.Println(a) // 1
-	/*
-		a, _ = stats.Percentile([]float64{1, 2, 3, 4, 5}, 75)
-		fmt.Println(a) // 4*/
+
+	a, _ = cis193stats.Correlation([]float64{1, 2, 3, 4, 5}, []float64{1, 2, 3, 4, 5})
+	fmt.Println(a) // 4
 
 }
