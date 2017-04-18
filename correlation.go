@@ -9,11 +9,11 @@ func Correlation(data1, data2 data) (float64, error) {
 	l2 := data2.Len()
 
 	if l1 == 0 || l2 == 0 {
-		return math.NaN(), EmptyInput
+		return math.NaN(), errors.New("Empty Set")
 	}
 
 	if l1 != l2 {
-		return math.NaN(), SizeErr
+		return math.NaN(), errors.New("Dataset Size Mismatch")
 	}
 
 	sdev1, _ := StandardDeviationPopulation(data1)
