@@ -3,7 +3,7 @@ package cis193stats
 import "math"
 
 // Correlation describes the degree of relationship between two sets of data
-func Correlation(data1, data2 Float64Data) (float64, error) {
+func Correlation(data1, data2 data) (float64, error) {
 
 	l1 := data1.Len()
 	l2 := data2.Len()

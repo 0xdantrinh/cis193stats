@@ -6,7 +6,7 @@ import (
 )
 
 // Covariance is a measure of how much two sets of data change
-func Covariance(data1, data2 Float64Data) (float64, error) {
+func Covariance(data1, data2 data) (float64, error) {
 
 	l1 := data1.Len()
 	l2 := data2.Len()
@@ -34,7 +34,7 @@ func Covariance(data1, data2 Float64Data) (float64, error) {
 }
 
 // CovariancePopulation computes covariance for entire population between two variables.
-func CovariancePopulation(data1, data2 Float64Data) (float64, error) {
+func CovariancePopulation(data1, data2 data) (float64, error) {
 
 	l1 := data1.Len()
 	l2 := data2.Len()
