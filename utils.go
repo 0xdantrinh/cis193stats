@@ -5,12 +5,6 @@ import (
 	"time"
 )
 
-// float64ToInt rounds a float64 to an int
-func float64ToInt(input float64) (output int) {
-	r, _ := Round(input, 0)
-	return int(r)
-}
-
 // unixnano returns nanoseconds from UTC epoch
 func unixnano() int64 {
 	return time.Now().UTC().UnixNano()
