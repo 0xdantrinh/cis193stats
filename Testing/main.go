@@ -44,4 +44,6 @@ func main() {
 	a, _ = cis193stats.Covariance([]float64{1, 2, 3, 4, 5}, []float64{1, 2, 3, 4, 5})
 	fmt.Println(a) // ~1
 
+	iqr, _ := cis193stats.InterQuartileRange([]float64{102, 104, 105, 107, 108, 109, 110, 112, 115, 116, 118})
+	fmt.Println(iqr) // 10
 }

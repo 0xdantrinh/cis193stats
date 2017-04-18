@@ -14,7 +14,9 @@ type Quartiles struct {
 
 // InterQuartileRange finds the range between Q1 and Q3
 func InterQuartileRange(input data) (float64, error) {
-	if input.Len() == 0 {
+
+	length := input.Len()
+	if length == 0 {
 		return math.NaN(), errors.New("Empty Set")
 	}
 
@@ -25,11 +27,11 @@ func InterQuartileRange(input data) (float64, error) {
 	// the input slice length is even or odd
 	var c1 int
 	var c2 int
-	if il%2 == 0 {
-		c1 = il / 2
-		c2 = il / 2
+	if length%2 == 0 {
+		c1 = length / 2
+		c2 = length / 2
 	} else {
-		c1 = (il - 1) / 2
+		c1 = (length - 1) / 2
 		c2 = c1 + 1
 	}
 
