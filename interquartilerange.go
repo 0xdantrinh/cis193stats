@@ -37,7 +37,7 @@ func InterQuartileRange(input data) (float64, error) {
 
 	// Find the Medians with the cutoff points
 	Q1, _ := Median(copy[:c1])
-	Q2, _ := Median(copy)
+	//Q2, _ := Median(copy)
 	Q3, _ := Median(copy[c2:])
 
 	iqr := Q3 - Q1
