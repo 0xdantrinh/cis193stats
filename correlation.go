@@ -1,6 +1,9 @@
 package cis193stats
 
-import "math"
+import (
+	"errors"
+	"math"
+)
 
 // Correlation describes the degree of relationship between two sets of data
 func Correlation(data1, data2 data) (float64, error) {
@@ -24,5 +27,8 @@ func Correlation(data1, data2 data) (float64, error) {
 	}
 
 	covp, _ := CovariancePopulation(data1, data2)
-	return covp / (sdev1 * sdev2), nil
+
+	denom := (sdev1 * sdev2)
+
+	return covp / denom, nil
 }
