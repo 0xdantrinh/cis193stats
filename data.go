@@ -67,7 +67,7 @@ func (dta data) InterQuartileRange() (float64, error) {
 func (dta data) Sample(n int, r bool) ([]float64, error) {
 	return Sample(dta, n, r)
 }
-
+*/
 // Variance the amount of variation in the dataset
 func (dta data) Variance() (float64, error) {
 	return Variance(dta)
@@ -91,7 +91,7 @@ func (dta data) Covariance(d data) (float64, error) {
 // CovariancePopulation computes covariance for entire population between two variables.
 func (dta data) CovariancePopulation(d data) (float64, error) {
 	return CovariancePopulation(dta, d)
-}*/
+}
 
 // Len returns length of slice
 func (dta data) Len() int { return len(dta) }
