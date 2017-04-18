@@ -42,10 +42,10 @@ func (dta data) StandardDeviationSample() (float64, error) {
 	return StandardDeviationSample(dta)
 }
 
-// Percentile finds the relative standing in a slice of floats
+/*// Percentile finds the relative standing in a slice of floats
 func (dta data) Percentile(p float64) (float64, error) {
 	return Percentile(dta, p)
-}
+}*/
 
 // Correlation describes the degree of relationship between two sets of data
 func (dta data) Correlation(d data) (float64, error) {
