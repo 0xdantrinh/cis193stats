@@ -27,7 +27,6 @@ func (dta data) Median() (float64, error) { return Median(dta) }
 // Mode returns the mode of the data
 func (dta data) Mode() ([]float64, error) { return Mode(dta) }
 
-/*
 // StandardDeviation the amount of variation in the dataset
 func (dta data) StandardDeviation() (float64, error) {
 	return StandardDeviation(dta)
@@ -43,6 +42,7 @@ func (dta data) StandardDeviationSample() (float64, error) {
 	return StandardDeviationSample(dta)
 }
 
+/*
 // Percentile finds the relative standing in a slice of floats
 func (dta data) Percentile(p float64) (float64, error) {
 	return Percentile(dta, p)
