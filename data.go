@@ -21,23 +21,13 @@ func (dta data) Mean() (float64, error) { return Mean(dta) }
 // GeometricMean returns the median of the data
 func (dta data) GeometricMean() (float64, error) { return GeometricMean(dta) }
 
-/*// Median returns the median of the data
+// Median returns the median of the data
 func (dta data) Median() (float64, error) { return Median(dta) }
 
 // Mode returns the mode of the data
 func (dta data) Mode() ([]float64, error) { return Mode(dta) }
 
-
-// MedianAbsoluteDeviation the median of the absolute deviations from the dataset median
-func (dta data) MedianAbsoluteDeviation() (float64, error) {
-	return MedianAbsoluteDeviation(dta)
-}
-
-// MedianAbsoluteDeviationPopulation finds the median of the absolute deviations from the population median
-func (dta data) MedianAbsoluteDeviationPopulation() (float64, error) {
-	return MedianAbsoluteDeviationPopulation(dta)
-}
-
+/*
 // StandardDeviation the amount of variation in the dataset
 func (dta data) StandardDeviation() (float64, error) {
 	return StandardDeviation(dta)
