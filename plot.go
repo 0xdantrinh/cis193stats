@@ -1,12 +1,11 @@
 package main
 
 import (
-	"math/rand"
-
 	"github.com/gonum/plot"
 	"github.com/gonum/plot/plotter"
 	"github.com/gonum/plot/plotutil"
 	"github.com/gonum/plot/vg"
+	"math/rand"
 )
 
 func main() {
