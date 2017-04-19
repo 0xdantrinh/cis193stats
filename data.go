@@ -52,16 +52,14 @@ func (dta data) Correlation(d data) (float64, error) {
 	return Correlation(dta, d)
 }
 
-/*
-// Quartile returns the three quartile points from a slice of data
-func (dta data) Quartile(d data) (Quartiles, error) {
-	return Quartile(d)
-}
-
 // InterQuartileRange finds the range between Q1 and Q3
 func (dta data) InterQuartileRange() (float64, error) {
 	return InterQuartileRange(dta)
 }
+
+/*
+
+
 
 // Sample returns sample from input with replacement or without
 func (dta data) Sample(n int, r bool) ([]float64, error) {
