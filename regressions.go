@@ -54,7 +54,7 @@ func LinearRegression(s Series) (regressions Series, err error) {
 func ExponentialRegression(s Series) (regressions Series, err error) {
 
 	if len(s) == 0 {
-		return nil, error
+		return nil, errors.New("Empty Set")
 	}
 
 	var sum [6]float64
@@ -87,7 +87,7 @@ func ExponentialRegression(s Series) (regressions Series, err error) {
 func LogarithmicRegression(s Series) (regressions Series, err error) {
 
 	if len(s) == 0 {
-		return nil, error
+		return nil, errors.New("Empty Set")
 	}
 
 	var sum [4]float64
