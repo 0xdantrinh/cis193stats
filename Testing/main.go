@@ -47,7 +47,7 @@ func main() {
 	iqr, _ := cis193stats.InterQuartileRange([]float64{102, 104, 105, 107, 108, 109, 110, 112, 115, 116, 118})
 	fmt.Println(iqr) // 10
 
-	c := []stats.Coordinate{
+	c := []cis193stats.Coordinate{
 		{1, 2.3},
 		{2, 3.3},
 		{3, 3.7},
@@ -55,13 +55,13 @@ func main() {
 		{5, 5.3},
 	}
 
-	r, _ := stats.LinearRegression(c)
+	r, _ := cis193stats.LinearRegression(c)
 	fmt.Println(r) // [{1 2.3800000000000026} {2 3.0800000000000014} {3 3.7800000000000002} {4 4.479999999999999} {5 5.179999999999998}]
 
-	r, _ = stats.ExponentialRegression(c)
+	r, _ = cis193stats.ExponentialRegression(c)
 	fmt.Println(r) // [{1 2.5150181024736638} {2 3.032084111136781} {3 3.6554544271334493} {4 4.406984298281804} {5 5.313022222665875}]
 
-	r, _ = stats.LogarithmicRegression(c)
+	r, _ = cis193stats.LogarithmicRegression(c)
 	fmt.Println(r) // [{1 2.1520822363811702} {2 3.3305559222492214} {3 4.019918836568674} {4 4.509029608117273} {5 4.888413396683663}]
 
 }
