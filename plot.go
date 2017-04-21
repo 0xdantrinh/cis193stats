@@ -1,6 +1,7 @@
 package cis193stats
 
 import (
+	"errors"
 	"github.com/gonum/plot"
 	"github.com/gonum/plot/plotter"
 	"github.com/gonum/plot/plotutil"
