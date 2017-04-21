@@ -1,12 +1,10 @@
 package cis193stats
 
 import (
-	"errors"
 	"github.com/gonum/plot"
 	"github.com/gonum/plot/plotter"
 	"github.com/gonum/plot/plotutil"
 	"github.com/gonum/plot/vg"
-	"math"
 )
 
 // randomPoints returns some random x, y points.
@@ -37,7 +35,7 @@ func randomPoints(n int, inpX data, inpY data) plotter.XYs {
 
 func plotNow(title string, inpX data, inpY data) {
 
-	rand.Seed(int64(0))
+	//rand.Seed(int64(0))
 
 	p, err := plot.New()
 	if err != nil {
