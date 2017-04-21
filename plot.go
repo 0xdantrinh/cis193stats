@@ -24,7 +24,7 @@ func randomPoints(n int, inpX data, inpY data) plotter.XYs {
 	return pts
 }
 
-func plot(title string, inpX data, inpY data) {
+func plotNow(title string, inpX data, inpY data) {
 
 	rand.Seed(int64(0))
 
