@@ -2,14 +2,11 @@ package cis193stats
 
 import (
 	"fmt"
-
-	"github.com/dantrinh/cis193stats"
-	"math/rand"
-
 	"github.com/gonum/plot"
 	"github.com/gonum/plot/plotter"
 	"github.com/gonum/plot/plotutil"
 	"github.com/gonum/plot/vg"
+	"math/rand"
 )
 
 // randomPoints returns some random x, y points.
