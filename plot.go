@@ -8,7 +8,7 @@ import (
 )
 
 // randomPoints returns some random x, y points.
-func randomPoints(n int, inpX data, inpY data) plotter.XYs {
+func RandomPoints(n int, inpX data, inpY data) plotter.XYs {
 	l1 := inpX.Len()
 	l2 := inpY.Len()
 
@@ -33,7 +33,7 @@ func randomPoints(n int, inpX data, inpY data) plotter.XYs {
 	return pts
 }
 
-func plotNow(title string, inpX data, inpY data) {
+func PlotNow(title string, inpX data, inpY data) {
 
 	//rand.Seed(int64(0))
 

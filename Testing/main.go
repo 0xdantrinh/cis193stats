@@ -63,5 +63,4 @@ func main() {
 	r, _ = cis193stats.LogarithmicRegression(c)
 	fmt.Println(r) // [{1 2.1520822363811702} {2 3.3305559222492214} {3 4.019918836568674} {4 4.509029608117273} {5 4.888413396683663}]
 
-	cis193stats.plotNow("Example 1", []float64{1, 2, 3, 4, 5}, []float64{10, 20, 30, 40, 50})
 }
