@@ -15,11 +15,11 @@ func randomPoints(n int, inpX data, inpY data) plotter.XYs {
 	l2 := inpY.Len()
 
 	if l1 == 0 || l2 == 0 {
-		return math.NaN(), errors.New("Empty Set")
+		return nil
 	}
 
 	if l1 != l2 {
-		return math.NaN(), errors.New("Dataset Size Mismatch")
+		return nil
 	}
 
 	pts := make(plotter.XYs, l1)
