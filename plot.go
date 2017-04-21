@@ -1,7 +1,6 @@
 package cis193stats
 
 import (
-	"fmt"
 	"github.com/gonum/plot"
 	"github.com/gonum/plot/plotter"
 	"github.com/gonum/plot/plotutil"
@@ -11,7 +10,18 @@ import (
 
 // randomPoints returns some random x, y points.
 func randomPoints(n int, inpX data, inpY data) plotter.XYs {
-	pts := make(plotter.XYs, inp.len())
+	l1 := inpX.Len()
+	l2 := inpY.Len()
+
+	if l1 == 0 || l2 == 0 {
+		return math.NaN(), errors.New("Empty Set")
+	}
+
+	if l1 != l2 {
+		return math.NaN(), errors.New("Dataset Size Mismatch")
+	}
+
+	pts := make(plotter.XYs, l1)
 	for i := range pts {
 		/*if i == 0 {
 			pts[i].X = rand.Float64()
