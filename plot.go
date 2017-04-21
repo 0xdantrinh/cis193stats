@@ -5,7 +5,7 @@ import (
 	"github.com/gonum/plot/plotter"
 	"github.com/gonum/plot/plotutil"
 	"github.com/gonum/plot/vg"
-	"math/rand"
+	"math"
 )
 
 // randomPoints returns some random x, y points.
