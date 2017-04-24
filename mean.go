@@ -30,7 +30,7 @@ func Mean(inp data) (float64, error) {
 }
 
 // GeoMean gets the geometric mean for a slice of numbers for data set
-func GeomMean(inp data) (float64, error) {
+func GeoMean(inp data) (float64, error) {
 
 	length := inp.Len()
 	if length == 0 {
