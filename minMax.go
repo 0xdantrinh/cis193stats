@@ -5,22 +5,18 @@ import (
 	"math"
 )
 
-// Min finds the lowest number in a set of data
+// Min finds the lowest number in a set of data (uses classic algorithm to find min value of an array)
 func Min(inp data) (min float64, err error) {
 
-	// Get the count of numbers in the slice
-	l := inp.Len()
+	length := inp.Len()
 
-	// Return an error if there are no numbers
-	if l == 0 {
+	if length == 0 {
 		return math.NaN(), errors.New("Empty Set")
 	}
 
-	// Get the first value as the starting point
 	min = inp.Get(0)
 
-	// Iterate until done checking for a lower value
-	for i := 1; i < l; i++ {
+	for i := 1; i < length; i++ {
 		if inp.Get(i) < min {
 			min = inp.Get(i)
 		}
@@ -28,18 +24,15 @@ func Min(inp data) (min float64, err error) {
 	return min, nil
 }
 
-// Max finds the highest number in a slice
+// Max finds the highest number in a slice (uses classic algorithm to find max value of an array)
 func Max(inp data) (max float64, err error) {
 
-	// Return an error if there are no numbers
 	if inp.Len() == 0 {
 		return math.NaN(), errors.New("Empty Set")
 	}
 
-	// Get the first value as the starting point
 	max = inp.Get(0)
 
-	// Loop and replace higher values
 	for i := 1; i < inp.Len(); i++ {
 		if inp.Get(i) > max {
 			max = inp.Get(i)

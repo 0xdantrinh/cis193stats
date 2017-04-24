@@ -25,22 +25,22 @@ func main() {
 	m, _ := cis193stats.Mode([]float64{5, 5, 3, 3, 4, 2, 1})
 	fmt.Println(m) // [5 3]
 
-	a, _ = cis193stats.PopulationVariance([]float64{1, 2, 3, 4, 5})
+	a, _ = cis193stats.PopulationVar([]float64{1, 2, 3, 4, 5})
 	fmt.Println(a) // 2
 
-	a, _ = cis193stats.SampleVariance([]float64{1, 2, 3, 4, 5})
+	a, _ = cis193stats.SampleVar([]float64{1, 2, 3, 4, 5})
 	fmt.Println(a) // 2.5
 
-	a, _ = cis193stats.StandardDeviationPopulation([]float64{1, 2, 3})
+	a, _ = cis193stats.SDPopulation([]float64{1, 2, 3})
 	fmt.Println(a) // 0.816496580927726
 
-	a, _ = cis193stats.StandardDeviationSample([]float64{1, 2, 3})
+	a, _ = cis193stats.SDSample([]float64{1, 2, 3})
 	fmt.Println(a) // 1
 
-	a, _ = cis193stats.Correlation([]float64{1, 2, 3, 4, 5}, []float64{1, 2, 3, 4, 5})
+	a, _ = cis193stats.Corr([]float64{1, 2, 3, 4, 5}, []float64{1, 2, 3, 4, 5})
 	fmt.Println(a) // ~1
 
-	a, _ = cis193stats.Covariance([]float64{1, 2, 3, 4, 5}, []float64{1, 2, 3, 4, 5})
+	a, _ = cis193stats.Covar([]float64{1, 2, 3, 4, 5}, []float64{1, 2, 3, 4, 5})
 	fmt.Println(a) // 2.5
 
 	iqr, _ := cis193stats.InterQuartileRange([]float64{102, 104, 105, 107, 108, 109, 110, 112, 115, 116, 118})
@@ -63,4 +63,5 @@ func main() {
 	r, _ = cis193stats.LogarithmicRegression(c)
 	fmt.Println(r) // [{1 2.1520822363811702} {2 3.3305559222492214} {3 4.019918836568674} {4 4.509029608117273} {5 4.888413396683663}]
 
+	cis193stats.PlotNow("Example 1", []float64{1, 2, 3, 4, 5}, []float64{5, 10, 15, 20, 25})
 }

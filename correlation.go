@@ -5,8 +5,8 @@ import (
 	"math"
 )
 
-// Correlation describes the degree of relationship between two sets of data
-func Correlation(data1, data2 data) (float64, error) {
+// Corr Calculates the Correlations between two data set
+func Corr(data1, data2 data) (float64, error) {
 
 	l1 := data1.Len()
 	l2 := data2.Len()
@@ -20,6 +20,7 @@ func Correlation(data1, data2 data) (float64, error) {
 	}
 
 	sdev1, _ := StandardDeviationPopulation(data1)
+
 	sdev2, _ := StandardDeviationPopulation(data2)
 
 	if sdev1 == 0 || sdev2 == 0 {

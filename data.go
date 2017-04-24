@@ -1,54 +1,49 @@
 package cis193stats
 
-// data is a named type for []float64 with helper methods
+// data is a custom type for easier naming of data sets
 type data []float64
 
-// Get item in slice
+// get corresponding index
 func (dta data) Get(i int) float64 { return dta[i] }
 
-// Min returns the minimum number in the data
+// Min finds the minimum of a data set
 func (dta data) Min() (float64, error) { return Min(dta) }
 
-// Max returns the maximum number in the data
+// Max finds the maximum of a data set
 func (dta data) Max() (float64, error) { return Max(dta) }
 
-// Sum returns the total of all the numbers in the data
+// SumAll finds the sum of all the data set
 func (dta data) SumAll() (float64, error) { return SumAll(dta) }
 
-// Mean returns the mean of the data
+// Mean finds the mean of all the data set
 func (dta data) Mean() (float64, error) { return Mean(dta) }
 
-// GeometricMean returns the median of the data
-func (dta data) GeometricMean() (float64, error) { return GeometricMean(dta) }
+// GeoMean will find the geometric mean of the data set
+func (dta data) GeoMean() (float64, error) { return GeoMean(dta) }
 
-// Median returns the median of the data
+// Median finds the median of the data set
 func (dta data) Median() (float64, error) { return Median(dta) }
 
-// Mode returns the mode of the data
+// Mode finds the mode of the data set
 func (dta data) Mode() ([]float64, error) { return Mode(dta) }
 
-// StandardDeviation the amount of variation in the dataset
-func (dta data) StandardDeviation() (float64, error) {
-	return StandardDeviation(dta)
+// SD finds the standard deviation of the data set
+func (dta data) SD() (float64, error) {
+	return SD(dta)
 }
 
-// StandardDeviationPopulation finds the amount of variation from the population
-func (dta data) StandardDeviationPopulation() (float64, error) {
-	return StandardDeviationPopulation(dta)
+// SDPopulation finds the standard deviation from the population of the data set
+func (dta data) SDPopulation() (float64, error) {
+	return SDPopulation(dta)
 }
 
-// StandardDeviationSample finds the amount of variation from a sample
-func (dta data) StandardDeviationSample() (float64, error) {
-	return StandardDeviationSample(dta)
+// SDSample finds the standard deviaton from a sample
+func (dta data) SDSample() (float64, error) {
+	return SDSample(dta)
 }
 
-/*// Percentile finds the relative standing in a slice of floats
-func (dta data) Percentile(p float64) (float64, error) {
-	return Percentile(dta, p)
-}*/
-
-// Correlation describes the degree of relationship between two sets of data
-func (dta data) Correlation(d data) (float64, error) {
+// Corr Calculates the Correlation between two data sets
+func (dta data) Corr(d data) (float64, error) {
 	return Correlation(dta, d)
 }
 
@@ -57,41 +52,32 @@ func (dta data) InterQuartileRange() (float64, error) {
 	return InterQuartileRange(dta)
 }
 
-/*
-
-
-
-// Sample returns sample from input with replacement or without
-func (dta data) Sample(n int, r bool) ([]float64, error) {
-	return Sample(dta, n, r)
-}
-*/
-// Variance the amount of variation in the dataset
-func (dta data) Variance() (float64, error) {
-	return Variance(dta)
+// Var finds the amount of variation in the dataset
+func (dta data) Var() (float64, error) {
+	return Var(dta)
 }
 
-// PopulationVariance finds the amount of variance within a population
-func (dta data) PopulationVariance() (float64, error) {
-	return PopulationVariance(dta)
+// PopulationVar finds the amount of variance within a population in the data set
+func (dta data) PopulationVar() (float64, error) {
+	return PopulationVar(dta)
 }
 
-// SampleVariance finds the amount of variance within a sample
-func (dta data) SampleVariance() (float64, error) {
-	return SampleVariance(dta)
+// SampleVar finds the amount of variance within a sample in the data set
+func (dta data) SampleVar() (float64, error) {
+	return SampleVar(dta)
 }
 
-// Covariance is a measure of how much two sets of data change
-func (dta data) Covariance(d data) (float64, error) {
-	return Covariance(dta, d)
+// Covar finds the covariance between two data set
+func (dta data) Covar(d data) (float64, error) {
+	return Covar(dta, d)
 }
 
-// CovariancePopulation computes covariance for entire population between two variables.
-func (dta data) CovariancePopulation(d data) (float64, error) {
-	return CovariancePopulation(dta, d)
+// CovarPopulation finds the population covariance between two data set.
+func (dta data) CovarPopulation(d data) (float64, error) {
+	return CovarPopulation(dta, d)
 }
 
-// Len returns length of slice
+// returns length
 func (dta data) Len() int { return len(dta) }
 
 // Less returns if one number is less than another
