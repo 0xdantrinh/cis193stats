@@ -2,7 +2,6 @@ package cis193stats
 
 import (
 	"sort"
-	"time"
 )
 
 // copyslice copies a slice of float64s

@@ -30,8 +30,6 @@ func RandomPoints(n int, inpX data, inpY data) plotter.XYs {
 
 func PlotNow(title string, inpX data, inpY data) {
 
-	//rand.Seed(int64(0))
-
 	p, err := plot.New()
 	if err != nil {
 		panic(err)
