@@ -5,8 +5,8 @@ import (
 	"math"
 )
 
-// Covariance is a measure of how much two sets of data change
-func Covariance(data1, data2 data) (float64, error) {
+// Covar is a measure of how much two sets of data change
+func Covar(data1, data2 data) (float64, error) {
 
 	l1 := data1.Len()
 	l2 := data2.Len()
@@ -33,8 +33,8 @@ func Covariance(data1, data2 data) (float64, error) {
 	return ss * float64(l1) / float64(l1-1), nil
 }
 
-// CovariancePopulation computes covariance for entire population between two variables.
-func CovariancePopulation(data1, data2 data) (float64, error) {
+// CovarPopulation computes covariance for entire population between two variables.
+func CovarPopulation(data1, data2 data) (float64, error) {
 
 	l1 := data1.Len()
 	l2 := data2.Len()

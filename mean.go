@@ -17,7 +17,7 @@ func SumAll(inp data) (out float64, err error) {
 	return out, nil
 }
 
-// Mean gets the average of a slice of numbers
+// Mean gets the average of a slice of numbers for data set
 func Mean(inp data) (float64, error) {
 
 	if inp.Len() == 0 {
@@ -29,15 +29,14 @@ func Mean(inp data) (float64, error) {
 	return sum / float64(inp.Len()), nil
 }
 
-// GeometricMean gets the geometric mean for a slice of numbers
-func GeometricMean(inp data) (float64, error) {
+// GeoMean gets the geometric mean for a slice of numbers for data set
+func GeomMean(inp data) (float64, error) {
 
 	length := inp.Len()
 	if length == 0 {
 		return math.NaN(), errors.New("Empty Set")
 	}
 
-	// Get the product of all the numbers
 	var p float64
 	for _, v := range inp {
 		if p == 0 {

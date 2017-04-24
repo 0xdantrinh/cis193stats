@@ -44,7 +44,7 @@ func (dta data) SDSample() (float64, error) {
 
 // Corr Calculates the Correlation between two data sets
 func (dta data) Corr(d data) (float64, error) {
-	return Correlation(dta, d)
+	return Corr(dta, d)
 }
 
 // InterQuartileRange finds the range between Q1 and Q3
