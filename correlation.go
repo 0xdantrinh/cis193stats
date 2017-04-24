@@ -19,15 +19,15 @@ func Corr(data1, data2 data) (float64, error) {
 		return math.NaN(), errors.New("Dataset Size Mismatch")
 	}
 
-	sdev1, _ := StandardDeviationPopulation(data1)
+	sdev1, _ := SDPopulation(data1)
 
-	sdev2, _ := StandardDeviationPopulation(data2)
+	sdev2, _ := SDPopulation(data2)
 
 	if sdev1 == 0 || sdev2 == 0 {
 		return 0, nil
 	}
 
-	covp, _ := CovariancePopulation(data1, data2)
+	covp, _ := CovarPopulation(data1, data2)
 
 	denom := (sdev1 * sdev2)
 
