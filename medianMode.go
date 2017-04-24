@@ -8,13 +8,8 @@ import (
 // Median gets the median number in a slice of numbers
 func Median(inp data) (median float64, err error) {
 
-	// Start by sorting a copy of the slice
 	c := sortedCopy(inp)
 
-	// No math is needed if there are no numbers
-	// For even numbers we add the two middle numbers
-	// and divide by two using the mean function above
-	// For odd numbers we just use the middle number
 	l := len(c)
 	if l == 0 {
 		return math.NaN(), errors.New("Empty Set")
@@ -28,7 +23,6 @@ func Median(inp data) (median float64, err error) {
 }
 
 func Mode(inp data) (mode []float64, err error) {
-	// Return the inp if there's only one number
 	l := inp.Len()
 	if l == 1 {
 		return inp, nil
@@ -37,8 +31,7 @@ func Mode(inp data) (mode []float64, err error) {
 	}
 
 	c := sortedCopyDif(inp)
-	// Traverse sorted array,
-	// tracking the longest repeating sequence
+
 	mode = make([]float64, 5)
 	cnt, maxCnt := 1, 1
 	for i := 1; i < l; i++ {
@@ -62,8 +55,6 @@ func Mode(inp data) (mode []float64, err error) {
 		maxCnt = cnt
 	}
 
-	// Since length must be greater than 1,
-	// check for slices of distinct values
 	if maxCnt == 1 {
 		return data{}, nil
 	}

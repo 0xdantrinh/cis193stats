@@ -22,11 +22,6 @@ func RandomPoints(n int, inpX data, inpY data) plotter.XYs {
 
 	pts := make(plotter.XYs, l1)
 	for i := range pts {
-		/*if i == 0 {
-			pts[i].X = rand.Float64()
-		} else {
-			pts[i].X = pts[i-1].X + rand.Float64()
-		}*/
 		pts[i].X = inpX[i]
 		pts[i].Y = inpY[i]
 	}
@@ -42,7 +37,7 @@ func PlotNow(title string, inpX data, inpY data) {
 		panic(err)
 	}
 
-	p.Title.Text = "Plotutil example"
+	p.Title.Text = title
 	p.X.Label.Text = "X"
 	p.Y.Label.Text = "Y"
 
