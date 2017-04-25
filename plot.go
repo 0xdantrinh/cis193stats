@@ -40,7 +40,7 @@ func PlotNow(title string, inpX data, inpY data) {
 	p.Y.Label.Text = "Y"
 
 	err = plotutil.AddLinePoints(p,
-		"First", RandomPoints(15, inpX, inpY))
+		"(X, Y)", RandomPoints(15, inpX, inpY))
 	if err != nil {
 		panic(err)
 	}
