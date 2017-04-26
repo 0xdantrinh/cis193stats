@@ -5,7 +5,7 @@ import (
 	"math"
 )
 
-// Median gets the median number in a slice of numbers
+// Median gets the median in a data set
 func Median(inp data) (median float64, err error) {
 
 	c := sortedCopy(inp)
@@ -22,6 +22,7 @@ func Median(inp data) (median float64, err error) {
 	return median, nil
 }
 
+// Mode gets the mode of a data set
 func Mode(inp data) (mode []float64, err error) {
 	l := inp.Len()
 	if l == 1 {
@@ -33,29 +34,29 @@ func Mode(inp data) (mode []float64, err error) {
 	c := sortedCopyDif(inp)
 
 	mode = make([]float64, 5)
-	cnt, maxCnt := 1, 1
+	count, max := 1, 1
 	for i := 1; i < l; i++ {
 		if c[i] == c[i-1] {
-			cnt++
-		} else if cnt == maxCnt && maxCnt != 1 {
+			count++
+		} else if count == max && max != 1 {
 			mode = append(mode, c[i-1])
-			cnt = 1
-		} else if cnt > maxCnt {
+			count = 1
+		} else if count > max {
 			mode = append(mode[:0], c[i-1])
-			maxCnt, cnt = cnt, 1
+			max, count = count, 1
 		} else {
-			cnt = 1
+			count = 1
 		}
 	}
 
-	if cnt == maxCnt {
+	if count == max {
 		mode = append(mode, c[l-1])
-	} else if cnt > maxCnt {
+	} else if count > max {
 		mode = append(mode[:0], c[l-1])
-		maxCnt = cnt
+		max = count
 	}
 
-	if maxCnt == 1 {
+	if max == 1 {
 		return data{}, nil
 	}
 

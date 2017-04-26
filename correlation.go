@@ -8,28 +8,28 @@ import (
 // Corr Calculates the Correlations between two data set
 func Corr(data1, data2 data) (float64, error) {
 
-	l1 := data1.Len()
-	l2 := data2.Len()
+	length1 := data1.Len()
+	length2 := data2.Len()
 
-	if l1 == 0 || l2 == 0 {
+	if length1 == 0 || length2 == 0 {
 		return math.NaN(), errors.New("Empty Set")
 	}
 
-	if l1 != l2 {
+	if length1 != length2 {
 		return math.NaN(), errors.New("Dataset Size Mismatch")
 	}
 
-	sdev1, _ := SDPopulation(data1)
+	sd_1, _ := SDPopulation(data1)
 
-	sdev2, _ := SDPopulation(data2)
+	sd_2, _ := SDPopulation(data2)
 
-	if sdev1 == 0 || sdev2 == 0 {
+	if sd_1 == 0 || sd_2 == 0 {
 		return 0, nil
 	}
 
 	covp, _ := CovarPopulation(data1, data2)
 
-	denom := (sdev1 * sdev2)
+	denom := (sd_1 * sd_2)
 
 	return covp / denom, nil
 }

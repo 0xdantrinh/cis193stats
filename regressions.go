@@ -30,13 +30,13 @@ func LinearRegression(s Series) (regs Series, err error) {
 	}
 
 	f := float64(i)
-	gradient := (f*sum[3] - sum[0]*sum[1]) / (f*sum[2] - sum[0]*sum[0])
-	intercept := (sum[1] / f) - (gradient * sum[0] / f)
+	grad := (f*sum[3] - sum[0]*sum[1]) / (f*sum[2] - sum[0]*sum[0])
+	intercept := (sum[1] / f) - (grad * sum[0] / f)
 
 	for j := 0; j < len(s); j++ {
 		regs = append(regs, Coordinate{
 			X: s[j].X,
-			Y: s[j].X*gradient + intercept,
+			Y: s[j].X*grad + intercept,
 		})
 	}
 

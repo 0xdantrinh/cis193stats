@@ -5,45 +5,44 @@ import (
 	"math"
 )
 
-// Covar is a measure of how much two sets of data change
+// Covar is the covariance of two data sets
 func Covar(data1, data2 data) (float64, error) {
 
-	l1 := data1.Len()
-	l2 := data2.Len()
+	length1 := data1.Len()
+	length2 := data2.Len()
 
-	if l1 == 0 || l2 == 0 {
+	if length1 == 0 || length2 == 0 {
 		return math.NaN(), errors.New("Empty Set")
 	}
 
-	if l1 != l2 {
+	if length1 != length2 {
 		return math.NaN(), errors.New("Dataset Size Mismatch")
 	}
 
 	m1, _ := Mean(data1)
 	m2, _ := Mean(data2)
 
-	// Calculate sum of squares
 	var ss float64
-	for i := 0; i < l1; i++ {
+	for i := 0; i < length1; i++ {
 		delta1 := (data1.Get(i) - m1)
 		delta2 := (data2.Get(i) - m2)
 		ss += (delta1*delta2 - ss) / float64(i+1)
 	}
 
-	return ss * float64(l1) / float64(l1-1), nil
+	return ss * float64(length1) / float64(length1-1), nil
 }
 
-// CovarPopulation computes covariance for entire population between two variables.
+// CovarPopulation is the population covariance.
 func CovarPopulation(data1, data2 data) (float64, error) {
 
-	l1 := data1.Len()
-	l2 := data2.Len()
+	length1 := data1.Len()
+	length2 := data2.Len()
 
-	if l1 == 0 || l2 == 0 {
+	if length1 == 0 || length2 == 0 {
 		return math.NaN(), errors.New("Empty Set")
 	}
 
-	if l1 != l2 {
+	if length1 != length2 {
 		return math.NaN(), errors.New("Dataset Size Mismatch")
 	}
 
@@ -51,11 +50,11 @@ func CovarPopulation(data1, data2 data) (float64, error) {
 	m2, _ := Mean(data2)
 
 	var s float64
-	for i := 0; i < l1; i++ {
+	for i := 0; i < length1; i++ {
 		delta1 := (data1.Get(i) - m1)
 		delta2 := (data2.Get(i) - m2)
 		s += delta1 * delta2
 	}
 
-	return s / float64(l1), nil
+	return s / float64(length1), nil
 }

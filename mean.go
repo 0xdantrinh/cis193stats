@@ -17,7 +17,7 @@ func SumAll(inp data) (out float64, err error) {
 	return out, nil
 }
 
-// Mean gets the average of a slice of numbers for data set
+// Mean gets mean for a data set
 func Mean(inp data) (float64, error) {
 
 	if inp.Len() == 0 {
